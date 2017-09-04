@@ -6,14 +6,13 @@ stream {
 	upstream web {
 		server deluge-web:80;
 	}
+}
+server {
+  	listen 80
+   	proxy_pass web;
+}
 
-	server {
-	  	listen 80
-	   	proxy_pass web;
-	}
-
-	server {
-		listen 58846;
-		proxy_pass daemon;
-	}
+server {
+	listen 58846;
+	proxy_pass daemon;
 }
