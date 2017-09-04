@@ -1,7 +1,7 @@
 stream {
-	upstream daemon {
-		server deluge-daemon:58846;
-	}
+#	upstream daemon {
+#		server deluge-daemon:58846;
+#	}
 
 	upstream web {
 		server deluge-web:80;
@@ -11,8 +11,8 @@ stream {
 	   	proxy_pass web;
 	}
 
-	server {
-		listen 58846;
-		proxy_pass daemon;
-	}
+#	server {
+#		listen 58846;
+#		proxy_pass daemon;
+#	}
 }
