@@ -8,3 +8,14 @@ server {
     proxy_pass http://deluge-web;
   }
 }
+
+stream {
+	upstream daemon {
+		server deluge-daemon:58846;
+	}
+
+	server {
+		listen 58846;
+		proxy_pass daemon;
+	}
+}
