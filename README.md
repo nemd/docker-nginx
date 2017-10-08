@@ -6,11 +6,11 @@
 3. nginx
 4. php-fpm
 
-notes:
 
-docker-compose.yml - edit for volumes /for downloads/
-php-fpm.ini - set codepath /chdir/ to be exact same as in nginx /nginx-site.conf/
-rtorrent.rc - edit for paths, ports, options etc
+run notes:
+- docker-compose.yml - edit for volumes /for downloads/
+- php-fpm.ini - set codepath /chdir/ to be exact same as in nginx /nginx-site.conf/
+- rtorrent.rc - edit for paths, ports, options etc
 
 
 todo:
