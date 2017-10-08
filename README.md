@@ -6,6 +6,7 @@
 - rutorrent stable
 - nginx
 - php-fpm
+- runint to serve them all
 
 
 ## run:
@@ -18,3 +19,5 @@
 - add volume for config
 - move php-fpm to nginx unit
 - add templates for all configs (?)
+- add .htaccess for nginx
+- add tls
