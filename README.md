@@ -6,7 +6,7 @@
 - rutorrent stable
 - nginx
 - php-fpm
-- runint to serve them all
+- runit to serve them all
 
 
 ## run:
@@ -21,3 +21,4 @@
 - add templates for all configs (?)
 - add .htaccess for nginx
 - add tls
+- replace runit with s6-overlay /to test it mostly/
