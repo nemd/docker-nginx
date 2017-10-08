@@ -1,9 +1,0 @@
-stream {
-	upstream deluge {
-		server deluge:80;
-	}
-	server {
-	  	listen 80;
-	   	proxy_pass deluge;
-	}
-}

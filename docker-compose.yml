@@ -1,10 +1,17 @@
 version: '3'
 
 services:
-    nginx:
+    rutorrent:
         build:
             context: .
             dockerfile: ./Dockerfile
-        image: nginx
+        image: nemd/rutorrent
+        stdin_open: false
+        tty: false
+        environment:
+          - TERM=xterm
         ports:
-            - 80
+            - 8080:80
+            - 49264:49264
+        volumes:
+            - ~/Downloads:/downloads
