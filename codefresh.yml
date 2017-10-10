@@ -4,7 +4,7 @@ steps:
 
     build_rtorrent:
         type: build
-        image_name: rtorrent
+        image_name: nemd/rtorrent
         dockerfile: Dockerfile
         working_directory: ${{main_clone}}
         tag: ${{CF_BRANCH}}
@@ -12,7 +12,7 @@ steps:
     push_to_registry:
         type: push
         title: Pushing to registry
-        candidate: nemd/${{build_rtorrent}}
+        candidate: ${{build_rtorrent}}
         registry: dockerhub
         tags:
             - latest
