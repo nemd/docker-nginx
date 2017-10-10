@@ -39,7 +39,7 @@ RUN sed -i '/profilePath/ s@\.\.\/share@\/config\/rutorrent\/profiles@' /var/www
 
 # RUN sed -i '/scgi_host/s/127.0.0.1/rtorrent/' /var/www/rutorrent/conf/config.php
 
-EXPOSE 80 49264 6881
+EXPOSE 80 49264 6881 5000
 
 VOLUME /downloads /config
 
