@@ -12,7 +12,7 @@ steps:
     push_to_registry:
         type: push
         title: Pushing to registry
-        candidate: ${{build_rtorrent}}
+        candidate: nemd/${{build_rtorrent}}
         registry: dockerhub
         tags:
             - latest
