@@ -8,7 +8,8 @@ ADD nginx-site.conf /etc/nginx/conf.d/default.conf
 COPY php-fpm.conf /etc/php7/php-fpm.conf
 COPY php.ini /etc/php7/conf.d/50-setting.ini
 
-RUN mkdir /root/session
+RUN mkdir /root/session &&\
+	mkdir -p /config/rutorrent
 
 ADD rtorrent.rc /root/.rtorrent.rc
 
@@ -34,8 +35,12 @@ RUN mkdir -p /var/www && \
     rm ruTorrent-3.7.zip &&\
     chown -R nginx /var/www/rutorrent
 
+RUN sed -i '/profilePath/ s@\.\.\/share@\/config\/rutorrent\/profiles@' /var/www/rutorrent/conf/config.php
+
 # RUN sed -i '/scgi_host/s/127.0.0.1/rtorrent/' /var/www/rutorrent/conf/config.php
 
 EXPOSE 80 49264 6881
+
+VOLUME /downloads /config
 
 ENTRYPOINT ["/sbin/runsvdir", "/etc/service"]
