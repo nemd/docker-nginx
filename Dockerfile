@@ -9,7 +9,7 @@ COPY php-fpm.conf /etc/php7/php-fpm.conf
 COPY php.ini /etc/php7/conf.d/50-setting.ini
 
 RUN mkdir /root/session &&\
-	mkdir -p /config/rutorrent
+	mkdir -p /config/rutorrent/profiles/torrents
 
 ADD rtorrent.rc /root/.rtorrent.rc
 
