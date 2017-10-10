@@ -1,0 +1,22 @@
+version: '1.0'
+
+steps:
+
+    build_rtorrent:
+        type: build
+        image_name: rtorrent
+        dockerfile: Dockerfile
+        working_directory: ${{main_clone}}
+        tag: ${{CF_BRANCH}}
+
+    push_to_registry:
+        type: push
+        title: Pushing to registry
+        candidate: ${{build_rtorrent}}
+        registry: dockerhub
+        tags:
+            - latest
+        when:
+            branch:
+                only: 
+                    - master
