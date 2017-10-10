@@ -34,7 +34,7 @@ RUN mkdir -p /var/www && \
     mv ruTorrent-master /var/www/rutorrent && \
     rm ruTorrent-3.7.zip &&\
     chown -R nginx /var/www/rutorrent &&\
-    chown -R nginx /config
+    chown -R nginx /config/rutorrent
 
 RUN sed -i '/profilePath/ s@\.\.\/share@\/config\/rutorrent\/profiles@' /var/www/rutorrent/conf/config.php
 
