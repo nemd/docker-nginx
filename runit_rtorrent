@@ -1,3 +1,4 @@
 #!/bin/sh
 
+rm /downloads/session/*.lock
 rtorrent
