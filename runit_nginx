@@ -1,3 +1,5 @@
 #!/bin/sh
 
+htpasswd -bc /etc/nginx/.htpasswd "$NGINX_USER" "$NGINX_PASS"
+
 nginx -g "daemon off;"

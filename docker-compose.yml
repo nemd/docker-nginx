@@ -10,6 +10,8 @@ services:
         tty: false
         environment:
           - TERM=xterm
+          - NGINX_USER=nobody
+          - NGINX_PASS=nopass
         ports:
             - 8080:80
             - 49264:49264
