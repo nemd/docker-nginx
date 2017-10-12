@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-RUN apk add --update-cache nginx nginx-mod-stream bash wget unzip runit php7-fpm php7-json curl rtorrent php7 php7-curl ffmpeg unrar
+RUN apk add --update-cache nginx nginx-mod-stream bash wget unzip runit php7-fpm php7-json curl rtorrent php7 php7-curl ffmpeg unrar apache2utils
 
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD nginx-site.conf /etc/nginx/conf.d/default.conf
