@@ -8,7 +8,7 @@ ADD nginx-site.conf /etc/nginx/conf.d/default.conf
 COPY php-fpm.conf /etc/php7/php-fpm.conf
 COPY php.ini /etc/php7/conf.d/50-setting.ini
 
-RUN mkdir /downloads/session &&\
+RUN mkdir -p /downloads/session &&\
 	mkdir -p /config/rutorrent/profiles/torrents
 
 ADD rtorrent.rc /root/.rtorrent.rc
